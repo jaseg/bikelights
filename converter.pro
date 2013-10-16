@@ -1,4 +1,4 @@
-update=Tue 15 Oct 2013 10:00:58 PM CEST
+update=Thu 17 Oct 2013 12:22:29 AM CEST
 version=1
 last_client=eeschema
 [cvpcb]
@@ -91,3 +91,5 @@ LibName34=MiscellaneousDevices
 LibName35=Microprocessors
 LibName36=DataStorage
 LibName37=/home/jaseg/dev/KiCad-Libraries/DataStorage
+LibName38=/home/jaseg/dev/c-locc/hardware/c_locc-ctrl/c_locc-ctrl-cache
+LibName39=usb-mods
