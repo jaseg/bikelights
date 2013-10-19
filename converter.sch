@@ -37,6 +37,7 @@ LIBS:Microprocessors
 LIBS:DataStorage
 LIBS:c_locc-ctrl-cache
 LIBS:usb-mods
+LIBS:lm1117e
 LIBS:converter-cache
 EELAYER 27 0
 EELAYER END
@@ -44,7 +45,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "18 oct 2013"
+Date "19 oct 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -346,17 +347,6 @@ F 3 "~" H 8400 3450 60  0000 C CNN
 $EndComp
 Text Label 5100 3650 0    60   ~ 0
 PWM_Back
-$Comp
-L LM117E U2
-U 1 1 525F0E52
-P 4150 1100
-F 0 "U2" H 3950 1300 40  0000 C CNN
-F 1 "LT1117-5.0" H 4150 1300 40  0000 L CNN
-F 2 "LLC-20" H 4150 1200 30  0000 C CIN
-F 3 "~" H 4150 1100 60  0000 C CNN
-	1    4150 1100
-	1    0    0    -1  
-$EndComp
 $Comp
 L CP1 C2
 U 1 1 525F0E7F
@@ -961,13 +951,9 @@ Wire Wire Line
 Wire Wire Line
 	7800 2700 7800 2450
 Wire Wire Line
-	7100 1800 7200 1800
+	7100 1800 7300 1800
 Wire Wire Line
-	7200 1800 7300 1800
-Wire Wire Line
-	7700 1800 7800 1800
-Wire Wire Line
-	7800 1800 7900 1800
+	7700 1800 7900 1800
 Wire Wire Line
 	7800 2050 7800 1800
 Connection ~ 7800 1800
@@ -991,16 +977,12 @@ Wire Wire Line
 Wire Wire Line
 	9300 2100 9350 2100
 Wire Wire Line
-	9850 2200 9900 2200
-Wire Wire Line
-	9900 2200 9950 2200
+	9850 2200 9950 2200
 Connection ~ 9900 2200
 Wire Wire Line
 	10500 2700 10500 2650
 Wire Wire Line
-	10450 2200 10500 2200
-Wire Wire Line
-	10500 2200 10900 2200
+	10450 2200 10900 2200
 Wire Wire Line
 	10500 2200 10500 2250
 Connection ~ 10500 2200
@@ -1016,18 +998,14 @@ Wire Wire Line
 	8650 2500 8750 2500
 Connection ~ 9000 -50 
 Wire Wire Line
-	3650 950  3650 1050
-Wire Wire Line
-	3650 1050 3650 1150
+	3650 950  3650 1150
 Wire Wire Line
 	3650 1050 3750 1050
 Connection ~ 3650 1050
 Wire Wire Line
 	4550 1050 4650 1050
 Wire Wire Line
-	4650 950  4650 1050
-Wire Wire Line
-	4650 1050 4650 1150
+	4650 950  4650 1150
 Connection ~ 4650 1050
 Wire Wire Line
 	3650 1650 3650 1550
@@ -1042,16 +1020,12 @@ Wire Wire Line
 Wire Wire Line
 	9300 3750 9350 3750
 Wire Wire Line
-	9850 3850 9900 3850
-Wire Wire Line
-	9900 3850 9950 3850
+	9850 3850 9950 3850
 Connection ~ 9900 3850
 Wire Wire Line
 	10500 4350 10500 4300
 Wire Wire Line
-	10450 3850 10500 3850
-Wire Wire Line
-	10500 3850 10900 3850
+	10450 3850 10900 3850
 Wire Wire Line
 	10500 3850 10500 3900
 Connection ~ 10500 3850
@@ -1066,38 +1040,28 @@ Wire Wire Line
 Wire Wire Line
 	8650 4150 8750 4150
 Wire Wire Line
-	6300 4150 6350 4150
-Wire Wire Line
-	6350 4150 6750 4150
+	6300 4150 6750 4150
 Wire Wire Line
 	6750 4150 6750 3750
 Connection ~ 6350 4150
 Wire Wire Line
-	5900 3450 6350 3450
-Wire Wire Line
-	6350 3450 6500 3450
+	5900 3450 6500 3450
 Wire Wire Line
 	6350 3750 6350 3450
 Connection ~ 6350 3450
 Wire Wire Line
-	5900 3950 5900 4150
-Wire Wire Line
-	5900 4150 5900 4250
+	5900 3950 5900 4250
 Wire Wire Line
 	5900 3950 6050 3950
 Connection ~ 5900 4150
 Wire Wire Line
 	5900 4750 5900 4650
 Wire Wire Line
-	6900 3450 7000 3450
-Wire Wire Line
-	7000 3450 7100 3450
+	6900 3450 7100 3450
 Wire Wire Line
 	7800 4350 7800 4100
 Wire Wire Line
-	7700 3450 7800 3450
-Wire Wire Line
-	7800 3450 7900 3450
+	7700 3450 7900 3450
 Wire Wire Line
 	7800 3450 7800 3700
 Connection ~ 7800 3450
@@ -1109,9 +1073,7 @@ Wire Wire Line
 Wire Wire Line
 	9300 4200 9350 4200
 Wire Wire Line
-	9300 3950 9300 4150
-Wire Wire Line
-	9300 4150 9300 4200
+	9300 3950 9300 4200
 Wire Wire Line
 	9300 3950 9350 3950
 Wire Wire Line
@@ -1124,9 +1086,7 @@ Wire Wire Line
 Wire Wire Line
 	9300 2550 9350 2550
 Wire Wire Line
-	9300 2300 9300 2500
-Wire Wire Line
-	9300 2500 9300 2550
+	9300 2300 9300 2550
 Wire Wire Line
 	9300 2300 9350 2300
 Wire Wire Line
@@ -1167,9 +1127,7 @@ Wire Wire Line
 Wire Wire Line
 	2300 1700 2300 1800
 Wire Wire Line
-	2200 1800 2300 1800
-Wire Wire Line
-	2300 1800 2400 1800
+	2200 1800 2400 1800
 Wire Wire Line
 	4250 3300 4250 3250
 Wire Wire Line
@@ -1181,11 +1139,7 @@ Wire Wire Line
 Wire Wire Line
 	4200 2700 4600 2700
 Wire Wire Line
-	4550 2900 4550 3000
-Wire Wire Line
-	4550 3000 4550 3100
-Wire Wire Line
-	4550 3100 4550 3300
+	4550 2900 4550 3300
 Wire Wire Line
 	4550 2900 4600 2900
 Wire Wire Line
@@ -1199,14 +1153,10 @@ Wire Wire Line
 Wire Wire Line
 	3850 3050 3600 3050
 Wire Wire Line
-	3900 4100 3900 4350
-Wire Wire Line
-	3900 4350 3900 4400
+	3900 4100 3900 4400
 Connection ~ 3900 4350
 Wire Wire Line
-	4500 4100 4500 4350
-Wire Wire Line
-	4500 4350 4500 4400
+	4500 4100 4500 4400
 Connection ~ 4500 4350
 Wire Wire Line
 	3900 4850 3900 4800
@@ -1227,9 +1177,7 @@ Wire Wire Line
 Wire Wire Line
 	2300 4700 2300 4600
 Wire Wire Line
-	2250 4600 2300 4600
-Wire Wire Line
-	2300 4600 2350 4600
+	2250 4600 2350 4600
 Connection ~ 2300 1800
 Connection ~ 2300 4600
 Text Label 1200 5250 0    60   ~ 0
@@ -1373,10 +1321,10 @@ $EndComp
 Wire Wire Line
 	9600 2400 9600 2300
 $Comp
-L R R?
+L R R12
 U 1 1 5261574C
 P 5500 3950
-F 0 "R?" V 5580 3950 40  0000 C CNN
+F 0 "R12" V 5580 3950 40  0000 C CNN
 F 1 "47k" V 5507 3951 40  0000 C CNN
 F 2 "~" V 5430 3950 30  0000 C CNN
 F 3 "~" H 5500 3950 30  0000 C CNN
@@ -1391,4 +1339,26 @@ Wire Wire Line
 	5500 4200 5500 4450
 Wire Wire Line
 	5500 4450 5600 4450
+$Comp
+L +12V #PWR037
+U 1 1 526283B4
+P 6350 3450
+F 0 "#PWR037" H 6350 3400 20  0001 C CNN
+F 1 "+12V" H 6350 3550 30  0000 C CNN
+F 2 "" H 6350 3450 60  0000 C CNN
+F 3 "" H 6350 3450 60  0000 C CNN
+	1    6350 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L LM1117E U?
+U 1 1 52628562
+P 4150 1100
+F 0 "U?" H 3950 1300 40  0000 C CNN
+F 1 "LM1117E" H 4150 1300 40  0000 L CNN
+F 2 "LLC-20" H 4150 1200 30  0000 C CIN
+F 3 "~" H 4150 1100 60  0000 C CNN
+	1    4150 1100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
