@@ -2,3 +2,5 @@ _autosave*
 *.bak
 *.bck
 *.kicad_pcb-bak
+gerber/.*
+.*.kicad_pcb
